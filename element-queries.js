@@ -60,7 +60,6 @@ function ElementQueries() {
 				rule = crossRules[x].selectorText;
 				selectorTextString += rule + ';';
 			}
-			console.log(selectorTextString);
 			self.checkSelectorsForElementQuery(selectorTextString);
 		});
 	};

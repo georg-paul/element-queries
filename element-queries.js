@@ -155,7 +155,5 @@ function ElementQueries() {
 	};
 }
 
-
-(function () {
-	new ElementQueries().init();
-}());
+var ElementQueriesInstance = new ElementQueries();
+ElementQueriesInstance.init();

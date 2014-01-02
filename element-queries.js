@@ -33,7 +33,8 @@ function ElementQueries() {
 		maxWSelector = 'eq-max-width-',
 		minWSelector = 'eq-min-width-',
 		maxHSelector = 'eq-max-height-',
-		minHSelector = 'eq-min-height-';
+		minHSelector = 'eq-min-height-',
+		storedElements = [];
 
 	this.init = function () {
 		self.parseStylesheets();
@@ -125,6 +126,8 @@ function ElementQueries() {
 
 		if (elementsLength === 0) {
 			return;
+		} else {
+			storedElements.push(elements);
 		}
 
 		for (var i = 0; i < elementsLength; i++) {
@@ -150,6 +153,14 @@ function ElementQueries() {
 			if ((values.maxH > 0 && values.minH > 0) && (elementHeight < values.maxH && elementHeight > values.minH)) {
 				elements[i].classList.add(maxHSelector + values.maxH);// max and min height used in combination
 				elements[i].classList.add(minHSelector + values.minH);
+			}
+		}
+	};
+
+	this.revertApplication = function () {
+		for (var i = 0; i < storedElements.length; i++) {
+			for (var j = 0; j < storedElements[i].length; j++) {
+				storedElements[i][j].className = (storedElements[i][j].className.replace(' ', '.')).replace(eqSelectorRegExp, '');
 			}
 		}
 	};

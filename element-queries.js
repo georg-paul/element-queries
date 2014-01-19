@@ -25,6 +25,15 @@
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+// http://paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
+window.log = function () {
+	log.history = log.history || [];   // store logs to an array for reference
+	log.history.push(arguments);
+	if (this.console) {
+		console.log(Array.prototype.slice.call(arguments));
+	}
+};
+
 function ElementQueries() {
 	"use strict";
 
@@ -54,14 +63,19 @@ function ElementQueries() {
 		}
 
 		stylesheetsArray.forEach(function (stylesheet) {
-			crossRules = stylesheet.rules || stylesheet.cssRules;
-			crossRulesLength = crossRules.length;
+			try {
+				crossRules = stylesheet.rules || stylesheet.cssRules;
+				crossRulesLength = crossRules.length;
 
-			for (var x = 0; x < crossRulesLength; x++) {
-				rule = crossRules[x].selectorText;
-				selectorTextString += rule + ';';
+				for (var x = 0; x < crossRulesLength; x++) {
+					rule = crossRules[x].selectorText;
+					selectorTextString += rule + ';';
+				}
+				self.checkSelectorsForElementQuery(selectorTextString);
 			}
-			self.checkSelectorsForElementQuery(selectorTextString);
+			catch(e) {
+				log(stylesheet, 'cannot be accessed'); // Dev output
+			}
 		});
 	};
 

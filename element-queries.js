@@ -180,5 +180,7 @@ function ElementQueries() {
 	};
 }
 
-var ElementQueriesInstance = new ElementQueries();
-ElementQueriesInstance.init();
+DomReady.ready(function() {
+	var ElementQueriesInstance = new ElementQueries();
+	ElementQueriesInstance.init();
+});

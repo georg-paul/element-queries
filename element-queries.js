@@ -180,7 +180,9 @@ function ElementQueries() {
 	};
 }
 
-DomReady.ready(function() {
+$(document).ready(function () {
+	'use strict';
+
 	var ElementQueriesInstance = new ElementQueries();
 	ElementQueriesInstance.init();
 });

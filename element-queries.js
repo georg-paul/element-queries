@@ -54,19 +54,12 @@ function ElementQueries() {
 			crossRules,
 			crossRulesLength,
 			rule = '',
-			stylesheetsArray = [],
-			stylesheetsObject = document.styleSheets,
-			stylesheetsLength = stylesheetsObject.length;
+			stylesheetsObject = document.styleSheets;
 
-		for (var i = 0; i < stylesheetsLength; i++) {
-			stylesheetsArray.push(stylesheetsObject[i]);
-		}
-
-		stylesheetsArray.forEach(function (stylesheet) {
+		for (var i = 0; i < stylesheetsObject.length; i++) {
 			try {
-				crossRules = stylesheet.rules || stylesheet.cssRules;
+				crossRules = stylesheetsObject[i].rules || stylesheetsObject[i].cssRules;
 				crossRulesLength = crossRules.length;
-
 				for (var x = 0; x < crossRulesLength; x++) {
 					rule = crossRules[x].selectorText;
 					selectorTextString += rule + ';';
@@ -74,9 +67,9 @@ function ElementQueries() {
 				self.checkSelectorsForElementQuery(selectorTextString);
 			}
 			catch(e) {
-				log(stylesheet, 'cannot be accessed'); // Dev output
+				log(stylesheetsObject[i], 'cannot be accessed'); // Dev output
 			}
-		});
+		}
 	};
 
 	this.checkSelectorsForElementQuery = function (selectorTextString) {

@@ -8,7 +8,70 @@
 </head>
 <body>
 	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
+	<div id="qunit-fixture">
+        <style type="text/css">
+            .demo-text.eq-max-width-1999.eq-min-width-400 {
+                color: rgb(255, 0, 0);
+            }
+            .demo-text.eq-max-width-600 {
+                color: rgb(0, 0, 255);
+            }
+            .demo-text.eq-min-width-2500 {
+                color: rgb(10, 10, 10);
+            }
+            .demo-text.eq-max-width-2000 {
+                color: rgb(50, 50, 50);
+            }
+
+            .demo-text.eq-max-height-1999.eq-min-height-400 {
+                background-color: rgb(255, 0, 0);
+            }
+            .demo-text.eq-max-height-600 {
+                background-color: rgb(0, 0, 255);
+            }
+            .demo-text.eq-min-height-2500 {
+                background-color: rgb(10, 10, 10);
+            }
+            .demo-text.eq-max-height-2000 {
+                background-color: rgb(50, 50, 50);
+            }
+        </style>
+        <div style="width: 1999px;">
+            <p id="demo-text-1" class="demo-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+            </p>
+        </div>
+        <div style="width: 200px;">
+            <p id="demo-text-2" class="demo-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+            </p>
+        </div>
+        <div style="width: 2500px;">
+            <p id="demo-text-3" class="demo-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+            </p>
+        </div>
+        <div style="width: 2000px;">
+            <p id="demo-text-4" class="demo-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+            </p>
+        </div>
+
+        <p id="demo-text-5" class="demo-text" style="height: 1999px;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+        </p>
+        <p id="demo-text-6" class="demo-text" style="height: 200px;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+        </p>
+        <p id="demo-text-7" class="demo-text" style="height: 2500px;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+        </p>
+        <p id="demo-text-8" class="demo-text" style="height: 2000px;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+        </p>
+	</div>
+
+    <script src="jquery-2.0.0.min.js"></script>
 
 	<script src="../../../element-queries.min.js"></script>
 	<script src="qunit-1.12.0.js"></script>

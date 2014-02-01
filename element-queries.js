@@ -141,23 +141,23 @@ function ElementQueries() {
 			elementWidth = elements[i].offsetWidth;
 			elementHeight = elements[i].offsetHeight;
 
-			if ((values.maxW > 0 && !values.minW) && (elementWidth < values.maxW)) {
+			if ((values.maxW > 0 && !values.minW) && (elementWidth <= values.maxW)) {
 				elements[i].classList.add(maxWSelector + values.maxW); // max width
 			}
 			if ((values.minW > 0 && !values.maxW) && (elementWidth >= values.minW)) {
 				elements[i].classList.add(minWSelector + values.minW); // min width
 			}
-			if ((values.maxW > 0 && values.minW > 0) && (elementWidth < values.maxW && elementWidth >= values.minW)) {
+			if ((values.maxW > 0 && values.minW > 0) && (elementWidth <= values.maxW && elementWidth >= values.minW)) {
 				elements[i].classList.add(maxWSelector + values.maxW); // max and min width used in combination
 				elements[i].classList.add(minWSelector + values.minW);
 			}
-			if ((values.maxH > 0 && !values.minH) && (elementHeight < values.maxH)) {
+			if ((values.maxH > 0 && !values.minH) && (elementHeight <= values.maxH)) {
 				elements[i].classList.add(maxHSelector + values.maxH); // max height
 			}
-			if ((values.minH > 0 && !values.maxH) && (elementHeight > values.minH)) {
+			if ((values.minH > 0 && !values.maxH) && (elementHeight >= values.minH)) {
 				elements[i].classList.add(minHSelector + values.minH); // min height
 			}
-			if ((values.maxH > 0 && values.minH > 0) && (elementHeight < values.maxH && elementHeight > values.minH)) {
+			if ((values.maxH > 0 && values.minH > 0) && (elementHeight <= values.maxH && elementHeight >= values.minH)) {
 				elements[i].classList.add(maxHSelector + values.maxH);// max and min height used in combination
 				elements[i].classList.add(minHSelector + values.minH);
 			}

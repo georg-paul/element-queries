@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 
 		watch: {
 			js:  {
-				files: ['element-queries.js'],
+				files: ['element-queries.js', 'Tests/Unit/QUnit/element-queriesTest.js'],
 				tasks: ['jshint', 'uglify', 'qunit']
 			}
 		},

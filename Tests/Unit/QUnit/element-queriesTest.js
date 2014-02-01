@@ -116,3 +116,52 @@ test('applyElementQueries applies max-height && min-height class', function () {
 	var subject = new ElementQueries();
 	subject.applyElementQueries(elements, {maxH: 200, minH: 50});
 });
+
+test('element query for #demo-text-1 gets applied correctly', function () {
+	var $target = $('#demo-text-1');
+	ok(($target.hasClass('eq-max-width-1999') && $target.hasClass('eq-min-width-400') && $target.hasClass('eq-max-width-2000')), true);
+	equal($target.css('color'), 'rgb(255, 0, 0)');
+});
+
+test('element query for #demo-text-2 gets applied correctly', function () {
+	var $target = $('#demo-text-2');
+	ok(($target.hasClass('eq-max-width-600') && $target.hasClass('eq-max-width-2000')), true);
+	equal($target.css('color'), 'rgb(50, 50, 50)');
+});
+
+test('element query for #demo-text-3 gets applied correctly', function () {
+	var $target = $('#demo-text-3');
+	ok($target.hasClass('eq-min-width-2500'), true);
+	equal($target.css('color'), 'rgb(10, 10, 10)');
+});
+
+test('element query for #demo-text-4 gets applied correctly', function () {
+	var $target = $('#demo-text-4');
+	ok($target.hasClass('eq-max-width-2000'), true);
+	equal($target.css('color'), 'rgb(50, 50, 50)');
+});
+
+
+test('element query for #demo-text-5 gets applied correctly', function () {
+	var $target = $('#demo-text-5');
+	ok(($target.hasClass('eq-max-height-1999') && $target.hasClass('eq-min-height-400') && $target.hasClass('eq-max-height-2000')), true);
+	equal($target.css('backgroundColor'), 'rgb(255, 0, 0)');
+});
+
+test('element query for #demo-text-6 gets applied correctly', function () {
+	var $target = $('#demo-text-6');
+	ok(($target.hasClass('eq-max-height-600') && $target.hasClass('eq-max-height-2000')), true);
+	equal($target.css('backgroundColor'), 'rgb(50, 50, 50)');
+});
+
+test('element query for #demo-text-7 gets applied correctly', function () {
+	var $target = $('#demo-text-7');
+	ok($target.hasClass('eq-min-height-2500'), true);
+	equal($target.css('backgroundColor'), 'rgb(10, 10, 10)');
+});
+
+test('element query for #demo-text-8 gets applied correctly', function () {
+	var $target = $('#demo-text-8');
+	ok($target.hasClass('eq-max-height-2000'), true);
+	equal($target.css('backgroundColor'), 'rgb(50, 50, 50)');
+});

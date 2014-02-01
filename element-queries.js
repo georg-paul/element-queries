@@ -173,9 +173,16 @@ function ElementQueries() {
 	};
 }
 
-$(document).ready(function () {
-	'use strict';
-
-	var ElementQueriesInstance = new ElementQueries();
-	ElementQueriesInstance.init();
-});
+if (typeof $ === 'undefined' && typeof DomReady !== 'undefined') {
+	DomReady.ready(function() {
+		'use strict';
+		var ElementQueriesInstance = new ElementQueries();
+		ElementQueriesInstance.init();
+	});
+} else {
+	$(document).ready(function () {
+		'use strict';
+		var ElementQueriesInstance = new ElementQueries();
+		ElementQueriesInstance.init();
+	});
+}
